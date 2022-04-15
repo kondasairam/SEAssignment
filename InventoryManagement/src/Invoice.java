@@ -37,10 +37,4 @@ public class Invoice {
 	   }
 	   return result;
    }
-	/*
-	 * public static void main(String[] args) { List<Invoice> invoices =
-	 * getInvoiceByInvoiceId("ABCD"); for(int i=0;i<invoices.size();i++) {
-	 * System.out.println(invoices.get(i).invoiceId+" "+invoices.get(i).product.name
-	 * ); } }
-	 */
 }

@@ -30,5 +30,9 @@ public class Owner {
 		List<Invoice> invoices = Invoice.getInvoiceByInvoiceId(invoiceId);
     	return invoices;
 	}
+	public static List<Product> getProductsLessThan5(String warehouse){
+		List<Product> products = Warehouse.getProductslesserthanfive(warehouse);
+		return products;
+	}
 	
 }

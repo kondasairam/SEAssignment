@@ -26,10 +26,5 @@ public class ExtractingDataFromCSV {
 		} 
 		return data;
 	}
-	/*
-	 * public static void main(String[] args) { List<String[]> result =
-	 * getData("Example.csv"); for(int i=1;i<result.size();i++) {
-	 * System.out.println(result.get(i)[1]); } }
-	 */
-	 
+	
 }

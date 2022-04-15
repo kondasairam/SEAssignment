@@ -16,7 +16,58 @@ public class Product extends Warehouse{
 		this.quantity = quantity;
 		this.tax = tax;
 	}
+    
       
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getSellingPrice() {
+		return sellingPrice;
+	}
+
+
+	public void setSellingPrice(String sellingPrice) {
+		this.sellingPrice = sellingPrice;
+	}
+
+
+	public String getCostPrice() {
+		return costPrice;
+	}
+
+
+	public void setCostPrice(String costPrice) {
+		this.costPrice = costPrice;
+	}
+
+
+	public String getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
+
+
+	public String getTax() {
+		return tax;
+	}
+
+
+	public void setTax(String tax) {
+		this.tax = tax;
+	}
+
+
 	public static List<Product> getProductsInformation(){
     	  ExtractingDataFromCSV extractingDataFromCSV = new ExtractingDataFromCSV();
     	  List<String[]> data = extractingDataFromCSV.getData("ProductDetails.csv");
@@ -26,13 +77,5 @@ public class Product extends Warehouse{
     	  }
     	  return products;
       } 
-		
-		/*
-		 * public static void main(String[] args) { List<Product> products =
-		 * getProductsInformation(); for(int i=0;i<products.size();i++) {
-		 * System.out.println(products.get(i).name+" "+products.get(i).costPrice); }
-		 * 
-		 * }
-		 */
 		 
 }

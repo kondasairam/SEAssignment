@@ -21,22 +21,48 @@ public class UserPage {
         		 System.out.println("Hello Admin!!!!\n1:-> Inventory_lookup\n2:->Invoice");
         		 str=sc.nextLine();
         		 if(str.equalsIgnoreCase("1")) {
+        			 String warehouse="",pro="";
         			 do {
         				 System.out.println("which warehouse you are looking for:\n1:->Warehouse_1\n2:->Warehouse_2");
-            			 str=sc.nextLine();
-            			 if(str.equalsIgnoreCase("1") || str.equalsIgnoreCase("2")) {
+        				 warehouse=sc.nextLine();
+            			 if(warehouse.equalsIgnoreCase("1") || warehouse.equalsIgnoreCase("2")) {
             				 break;
             			 }
             			 else {
             				 System.out.println("Please enter valid warehouse!!");
             			 }
         			 }while(true);
-        			 System.out.println("-----------------------------Inventory Details for Warehouse "+str+"-----------------------------");
-        			 List<Product> products = Owner.inventoryLookup(str);
-        			 System.out.println("Name  Cost  Quantity");
-        			 for(int i=0;i<products.size();i++) {
-        				System.out.println(products.get(i).name+"  "+products.get(i).sellingPrice+"  "+products.get(i).quantity);
-        			 }
+        			 do {
+        				 System.out.println("Select the options:\n1:->All products\n2:->Product Quantity lee than 5");
+            			 pro=sc.nextLine();
+            			 if(pro.equalsIgnoreCase("1") || pro.equalsIgnoreCase("2")) {
+            				 break;
+            			 }
+            			 else {
+            				 System.out.println("Please enter valid option!!");
+            			 }
+        			 }while(true);
+                     if(pro.equalsIgnoreCase("1")) {
+            			 System.out.println("-----------------------------Inventory Details for Warehouse "+str+"-----------------------------");
+            			 List<Product> products = Owner.inventoryLookup(warehouse);
+            			 System.out.println("Name  Cost  Quantity");
+            			 for(int i=0;i<products.size();i++) {
+            				System.out.println(products.get(i).name+"  "+products.get(i).sellingPrice+"  "+products.get(i).quantity);
+            			 }
+                     }
+                     else {
+                    	 System.out.println("-----------------------------Inventory Details for Warehouse "+str+" which are lesset than 5-----------------------------");
+            			 List<Product> products = Owner.getProductsLessThan5(warehouse);
+            			 
+            			 if(products.size()==0) {
+            				 System.out.println("There is no product less than 5 quantity!!");
+            				 break;
+            			 }
+            			 System.out.println("Name  Quantity");
+            			 for(int i=0;i<products.size();i++) {
+            				System.out.println(products.get(i).name+"  "+products.get(i).quantity);
+            			 }
+                     }
         			 break;
         		 }
         		 else if(str.equalsIgnoreCase("2")) {
@@ -156,6 +182,5 @@ public class UserPage {
     	 System.out.println("Enter 0 to quit and 1 to continue!!!");
     	 run=sc.nextInt();
      }while(run==1);
-
  }
 }
