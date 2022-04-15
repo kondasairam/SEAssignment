@@ -6,13 +6,15 @@ public class Product extends Warehouse{
       public String sellingPrice;
       public String costPrice;
       public String quantity;
+      public String tax;
       
-      public Product(String warehouse,String name, String sellingPrice, String costPrice, String quantity) {
+      public Product(String warehouse,String name, String sellingPrice, String costPrice, String quantity, String tax) {
     	super(warehouse);
 		this.name = name;
 		this.sellingPrice = sellingPrice;
 		this.costPrice = costPrice;
 		this.quantity = quantity;
+		this.tax = tax;
 	}
       
 	public static List<Product> getProductsInformation(){
@@ -20,7 +22,7 @@ public class Product extends Warehouse{
     	  List<String[]> data = extractingDataFromCSV.getData("ProductDetails.csv");
     	  List<Product> products = new LinkedList<Product>();
     	  for(int i=1;i<data.size();i++) {
-    		  products.add(new Product(data.get(i)[0],data.get(i)[1],data.get(i)[2],data.get(i)[3],data.get(i)[4]));
+    		  products.add(new Product(data.get(i)[0],data.get(i)[1],data.get(i)[2],data.get(i)[3],data.get(i)[4],data.get(i)[5]));
     	  }
     	  return products;
       } 

@@ -25,9 +25,10 @@ public class Owner {
 		List<Product> products = Warehouse.getProductsByWarehouse(warehouse);
 		return products;
 	}
-	public static List<Invoice> getInvoice(String invoiceId) {
-    	List<Invoice> invoices = Invoice.getInvoiceByInvoiceId(invoiceId);
+	public static List<Invoice> getInvoiceForOwner(String invoiceId) {
+		// TODO Auto-generated method stub
+		List<Invoice> invoices = Invoice.getInvoiceByInvoiceId(invoiceId);
     	return invoices;
-    }
+	}
 	
 }

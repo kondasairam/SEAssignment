@@ -19,5 +19,11 @@ public class Customer{
 	public void setProduct(List<String> product) {
 		this.product = product;
 	}
+	
+	public static List<Invoice> getInvoiceForCustomer(String invoiceId) {
+		// TODO Auto-generated method stub
+		List<Invoice> invoices = Invoice.getInvoiceByInvoiceId(invoiceId);
+    	return invoices;
+	}
 
 }

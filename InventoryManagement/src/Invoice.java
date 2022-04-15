@@ -22,7 +22,7 @@ public class Invoice {
 	   List<String[]> data = extractingDataFromCSV.getData("InvoiceDetails.csv");
 	   List<Invoice> invoices = new LinkedList<>();
 	   for(int i=0;i<data.size();i++) {
-		   invoices.add(new Invoice(data.get(i)[0],new Product(" ",data.get(i)[1],data.get(i)[2]," ",data.get(i)[3]),data.get(i)[5],data.get(i)[6],data.get(i)[7]));
+		   invoices.add(new Invoice(data.get(i)[0],new Product(" ",data.get(i)[1],data.get(i)[2]," ",data.get(i)[3],data.get(i)[4]),data.get(i)[5],data.get(i)[6],data.get(i)[7]));
 	   }
 	   return invoices;
    }
